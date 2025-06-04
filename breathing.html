@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Breathing Exercises - Serenity Wellness</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #e6f0ea;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header, footer {
+      background-color: #a8d5ba;
+      color: #2c4a32;
+      padding: 20px 10%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    header h1, footer p {
+      margin: 0;
+    }
+
+    nav.main-nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #2c4a32;
+      font-weight: 600;
+    }
+
+    nav.main-nav a:hover, nav.main-nav a.active {
+      text-decoration: underline;
+      color: #3b5a44;
+    }
+
+    main {
+      flex: 1;
+      padding: 40px 10%;
+      text-align: center;
+    }
+
+    h2 {
+      color: #2c4a32;
+      margin-bottom: 10px;
+    }
+
+    .circle {
+      width: 200px;
+      height: 200px;
+      margin: 40px auto;
+      border: 5px solid #4a7c59;
+      border-radius: 50%;
+      background-color: #a8d5ba;
+      transition: transform 4s ease, background-color 4s ease;
+    }
+
+    p.instructions {
+      font-size: 1.2rem;
+      color: #4a7c59;
+      margin-bottom: 20px;
+      min-height: 1.5em;
+    }
+
+    .controls {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    label {
+      font-weight: 600;
+      color: #2c4a32;
+    }
+
+    select {
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: 1.5px solid #4a7c59;
+      font-size: 1rem;
+      color: #2c4a32;
+    }
+
+    button {
+      background-color: #4a7c59;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      min-width: 120px;
+    }
+
+    button:hover:not(:disabled) {
+      background-color: #3b5a44;
+    }
+
+    button:disabled {
+      background-color: #a0b99a;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Serenity Wellness</h1>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="login.html">Login</a>
+     
+    </nav>
+  </header>
+
+  <main>
+    <h2>Breathing Exercise</h2>
+    <p class="instructions" id="instruction">Select a duration and press Start.</p>
+
+    <div class="circle" id="circle"></div>
+
+    <div class="controls">
+      <label for="durationSelect">Duration per phase (seconds):</label>
+      <select id="durationSelect">
+        <option value="3">3</option>
+        <option value="4" selected>4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
+
+      <button id="startBtn">Start Exercise</button>
+      <button id="stopBtn" disabled>Stop Exercise</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MindEase. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const circle = document.getElementById('circle');
+    const instruction = document.getElementById('instruction');
+    const startBtn = document.getElementById('startBtn');
+    const stopBtn = document.getElementById('stopBtn');
+    const durationSelect = document.getElementById('durationSelect');
+
+    let breathingInterval;
+    let phase = 0; // 0 = inhale, 1 = hold, 2 = exhale, 3 = hold
+    let phaseDuration = parseInt(durationSelect.value) * 1000; // in ms
+
+    function updateInstruction() {
+      switch (phase) {
+        case 0:
+          instruction.textContent = "Breathe in slowly...";
+          circle.style.transform = "scale(1.5)";
+          circle.style.backgroundColor = "#4a7c59";
+          break;
+        case 1:
+          instruction.textContent = "Hold your breath...";
+          circle.style.transform = "scale(1.5)";
+          circle.style.backgroundColor = "#76b88a";
+          break;
+        case 2:
+          instruction.textContent = "Breathe out slowly...";
+          circle.style.transform = "scale(1)";
+          circle.style.backgroundColor = "#a8d5ba";
+          break;
+        case 3:
+          instruction.textContent = "Hold...";
+          circle.style.transform = "scale(1)";
+          circle.style.backgroundColor = "#76b88a";
+          break;
+      }
+    }
+
+    function startBreathing() {
+      phaseDuration = parseInt(durationSelect.value) * 1000;
+
+      phase = 0;
+      updateInstruction();
+
+      breathingInterval = setInterval(() => {
+        phase = (phase + 1) % 4;
+        updateInstruction();
+      }, phaseDuration);
+
+      startBtn.disabled = true;
+      stopBtn.disabled = false;
+      durationSelect.disabled = true;
+    }
+
+    function stopBreathing() {
+      clearInterval(breathingInterval);
+      instruction.textContent = "Exercise stopped. Select duration and press Start.";
+      circle.style.transform = "scale(1)";
+      circle.style.backgroundColor = "#a8d5ba";
+
+      startBtn.disabled = false;
+      stopBtn.disabled = true;
+      durationSelect.disabled = false;
+    }
+
+    startBtn.addEventListener('click', startBreathing);
+    stopBtn.addEventListener('click', stopBreathing);
+  </script>
+</body>
+</html>
