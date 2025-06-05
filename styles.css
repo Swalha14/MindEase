@@ -53,11 +53,9 @@ nav .btn:hover {
 }
 
 .features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+  
   padding: 40px 20px;
-  align-items: center;
+  
   
   
 }
@@ -186,5 +184,45 @@ form .btn:hover {
 .main-nav a:hover {
   color: #6fbf73;
 }
+ .features-heading {
+  font-size: 2rem;
+  color: #00796b;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  align-items: center;
+}
+.section-heading {
+  font-size: 2rem;
+  color: #00796b;
+  text-align: center;
+  margin: 40px 0 20px;
+}
+
+.quotes-section {
+  padding: 20px;
+}
+
+.quote-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.quote-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-left: 6px solid #004d40;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-style: italic;
+  color: #2c3e50;
+}
+
 
 
