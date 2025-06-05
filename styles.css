@@ -238,3 +238,49 @@ form .btn:hover {
   font-style: italic;
   color: #2c3e50;
 }
+footer {
+  background-color: #b2dfdb;
+  color: #004d40;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.footer-columns {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+
+.footer-column h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #004d40;
+}
+
+.footer-column p,
+.footer-column a {
+  color: #004d40;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 600px) {
+  .footer-columns {
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: left;
+  }
+}
+
+footer .copyright {
+  border-top: 1px solid #80cbc4;
+  padding-top: 10px;
+  margin-top: 20px;
+  font-size: 0.85rem;
+}
