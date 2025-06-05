@@ -9,6 +9,21 @@ body {
   background-color: #e8f5f5;
   color: #2c3e50;
   line-height: 1.6;
+  margin: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode{
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: 4px;
 }
 
 header {
@@ -53,11 +68,9 @@ nav .btn:hover {
 }
 
 .features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+  
   padding: 40px 20px;
-  align-items: center;
+  
   
   
 }
@@ -186,5 +199,88 @@ form .btn:hover {
 .main-nav a:hover {
   color: #6fbf73;
 }
+ .features-heading {
+  font-size: 2rem;
+  color: #00796b;
+  margin-bottom: 20px;
+  text-align: center;
+}
 
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));/*Makes cards horizontally stacked*/
+  gap: 20px;
+  align-items: center;
+}
+.section-heading {
+  font-size: 2rem;
+  color: #00796b;
+  text-align: center;
+  margin: 40px 0 20px;
+}
 
+.quotes-section {
+  padding: 20px;
+}
+
+.quote-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.quote-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-left: 6px solid #004d40;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-style: italic;
+  color: #2c3e50;
+}
+footer {
+  background-color: #b2dfdb;
+  color: #004d40;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.footer-columns {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+
+.footer-column h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #004d40;
+}
+
+.footer-column p,
+.footer-column a {
+  color: #004d40;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 600px) {
+  .footer-columns {
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: left;
+  }
+}
+
+footer .copyright {
+  border-top: 1px solid #80cbc4;
+  padding-top: 10px;
+  margin-top: 20px;
+  font-size: 0.85rem;
+}
