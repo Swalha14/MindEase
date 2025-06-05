@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mood Quiz - MindEase</title>
+    <link rel="stylesheet" href="mood-quiz.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="logo">MindEase</a>
+    </header>
+
+    <main>
+      <section class="quiz-section">
+        <h2>Mood Quiz</h2>
+        <form id="moodForm">
+          <label>1. How have you been feeling today?</label>
+          <select name="q1">
+            <option value="happy">Happy</option>
+            <option value="sad">Sad</option>
+            <option value="anxious">Anxious</option>
+            <option value="angry">Angry</option>
+            <option value="calm">Calm</option>
+          </select>
+
+          <label>2. How well did you sleep last night?</label>
+          <select name="q2">
+            <option value="great">Great</option>
+            <option value="okay">Okay</option>
+            <option value="poor">Poor</option>
+          </select>
+
+          <label>3. Have you been able to focus on tasks?</label>
+          <select name="q3">
+            <option value="focused">Very Focused</option>
+            <option value="somewhat">Somewhat</option>
+            <option value="notatall">Not at all</option>
+          </select>
+
+          <label>4. How is your energy level?</label>
+          <select name="q4">
+            <option value="high">High</option>
+            <option value="moderate">Moderate</option>
+            <option value="low">Low</option>
+          </select>
+
+          <label>5. How often have you felt overwhelmed recently?</label>
+          <select name="q5">
+            <option value="never">Never</option>
+            <option value="sometimes">Sometimes</option>
+            <option value="often">Often</option>
+          </select>
+
+          <button type="submit" class="btn">Submit</button>
+        </form>
+
+        <div id="result" class="result"></div>
+      </section>
+    </main>
+
+    <section class="quote-highlight">
+      <blockquote>
+        "Taking care of your mind is just as important as taking care of your
+        body."
+      </blockquote>
+    </section>
+
+    <footer>
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h4>Contact Us</h4>
+          <p>
+            Email:
+            <a href="mailto:support@mindease.com">support@mindease.com</a>
+          </p>
+          <p>Phone: +254 765489023</p>
+        </div>
+        <div class="footer-column">
+          <h4>About Us</h4>
+          <p>
+            MindEase is a mental wellness platform providing tools<br />
+            to help people improve emotional wellbeing. We aim to<br />
+            provide help for people going through daily struggles<br />
+            or even those that may have mental disorders.
+          </p>
+        </div>
+      </div>
+      <p class="copyright">&copy; 2025 MindEase. All rights reserved.</p>
+    </footer>
+
+    <script>
+      document
+        .getElementById("moodForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const q1 = document.forms["moodForm"]["q1"].value;
+          const q2 = document.forms["moodForm"]["q2"].value;
+          const q3 = document.forms["moodForm"]["q3"].value;
+          const q4 = document.forms["moodForm"]["q4"].value;
+          const q5 = document.forms["moodForm"]["q5"].value;
+
+          let message = "Thanks for checking in. ";
+
+          if (q1 === "sad" || q1 === "anxious" || q5 === "often") {
+            message +=
+              "It seems like you're facing some challenges today. Remember it's okay to feel that way—consider checking out our Articles or Support Groups.";
+          } else if (q1 === "happy" && q2 === "great") {
+            message +=
+              "You're in a great place today! Keep nurturing your well-being.";
+          } else {
+            message +=
+              "Keep taking care of yourself, and don't hesitate to use our resources if needed.";
+          }
+
+          document.getElementById("result").textContent = message;
+        });
+    </script>
+  </body>
+</html>

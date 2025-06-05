@@ -1,0 +1,131 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #e8f5f5;
+  color: #2c3e50;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #b2dfdb;
+  padding: 20px;
+  text-align: left;
+}
+
+.logo {
+  font-size: 1.8rem;
+  color: #004d40;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.quiz-section {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-section h2 {
+  text-align: center;
+  color: #00796b;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.btn {
+  margin-top: 20px;
+  background-color: #004d40;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #00695c;
+}
+
+.result {
+  margin-top: 25px;
+  font-size: 1rem;
+  text-align: center;
+  color: #00796b;
+  font-weight: bold;
+}
+
+.quote-highlight {
+  text-align: center;
+  font-style: italic;
+  color: #00796b;
+  background-color: #e0f7fa;
+  padding: 20px;
+  margin-top: 40px;
+  border-top: 1px solid #b2dfdb;
+}
+
+footer {
+  background-color: #b2dfdb;
+  color: #004d40;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.footer-columns {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+
+.footer-column h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #004d40;
+}
+
+.footer-column p,
+.footer-column a {
+  color: #004d40;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 600px) {
+  .footer-columns {
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: left;
+  }
+}
+
+footer .copyright {
+  border-top: 1px solid #80cbc4;
+  padding-top: 10px;
+  margin-top: 20px;
+  font-size: 0.85rem;
+}
