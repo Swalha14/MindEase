@@ -7,38 +7,12 @@
   <link rel="stylesheet" href="styles.css" />
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #e6f0ea;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
       min-height: 100vh;
-    }
-
-    header, footer {
-      background-color: #b2dfdb;
-      color: #004d40;
-      padding: 20px 10%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      max-height: fit-content;
     }
 
     header h1, footer p {
       margin: 0;
-    }
-
-    nav.main-nav a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: #004d40;
-      font-weight: 600;
-    }
-
-    nav.main-nav a:hover, nav.main-nav a.active {
-      text-decoration: underline;
-      color: #004d40;
     }
 
     main {
@@ -112,12 +86,16 @@
   </style>
 </head>
 <body>
- <header> 
- <h1>MindEase</h1> 
- <nav class="main-nav"> 
-   <a href="index.html">Home</a> 
+<header> 
+ <a href="index.html" style="text-decoration: none; color: inherit;">
+  <h1>MindEase</h1>
+</a>
+ <nav class="main-nav">
+   
+ <a href="index.html">Home</a> 
  <a href="articles.html">Articles</a> 
  <a href="support-groups.html">Support Groups</a> 
+ <a href="mood-quiz.html">Quiz</a>
  <a href="breathing.html">Breathing Exercise</a> 
  <a href="login.html" >Login</a> 
 </nav> 
