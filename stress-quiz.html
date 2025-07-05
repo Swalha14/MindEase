@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stress Quiz - MindEase</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="quiz.css" />
+</head>
+<body>
+  <header>
+    <a href="index.html" style="text-decoration: none; color: inherit;">
+      <h1>MindEase</h1>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="support-groups.html">Support Groups</a>
+      <a href="mood-quiz.html">Quiz</a>
+      <a href="breathing.html">Breathing Exercise</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>🌀 Stress Quiz</h2>
+    <p>Answer these questions to find out how stress may be affecting your daily life.</p>
+
+    <form id="stressQuiz">
+      <div class="quiz-question">
+        <p>1. How often do you feel tense or on edge?</p>
+        <label><input type="radio" name="q1" value="3"> Most of the time</label>
+        <label><input type="radio" name="q1" value="2"> Sometimes</label>
+        <label><input type="radio" name="q1" value="1"> Rarely</label>
+      </div>
+
+      <div class="quiz-question">
+        <p>2. Do you find it difficult to relax, even when you're not working?</p>
+        <label><input type="radio" name="q2" value="3"> Yes, often</label>
+        <label><input type="radio" name="q2" value="2"> Occasionally</label>
+        <label><input type="radio" name="q2" value="1"> Not really</label>
+      </div>
+
+      <div class="quiz-question">
+        <p>3. Do you experience physical symptoms such as headaches, fatigue, or muscle tension?</p>
+        <label><input type="radio" name="q3" value="3"> Frequently</label>
+        <label><input type="radio" name="q3" value="2"> Sometimes</label>
+        <label><input type="radio" name="q3" value="1"> Seldom</label>
+      </div>
+
+      <div class="quiz-question">
+        <p>4. How often do you feel overwhelmed by everyday tasks?</p>
+        <label><input type="radio" name="q4" value="3"> Very often</label>
+        <label><input type="radio" name="q4" value="2"> Occasionally</label>
+        <label><input type="radio" name="q4" value="1"> Rarely</label>
+      </div>
+
+      <div class="quiz-question">
+        <p>5. Do you find yourself being irritable or easily frustrated?</p>
+        <label><input type="radio" name="q5" value="3"> Yes, regularly</label>
+        <label><input type="radio" name="q5" value="2"> Sometimes</label>
+        <label><input type="radio" name="q5" value="1"> No, not often</label>
+      </div>
+
+      <button type="submit" class="quiz-link">Submit</button>
+    </form>
+
+    <div id="result" style="margin-top: 2rem; font-weight: bold;"></div>
+
+    <div class="disclaimer" style="margin-top: 3rem; padding: 1rem; background-color: #e6f2f9; border: 1px solid #b3d9f5; border-radius: 8px;">
+      <p style="margin: 0; font-size: 0.95rem; color: #0f3f63;">
+        <strong>Note:</strong> This quiz is not a clinical diagnosis. It’s intended to help you reflect and understand more about your emotional state.
+        If you’re feeling persistently unwell, please talk to a qualified therapist.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h4>Contact Us</h4>
+        <p>Email: <a href="mailto:support@mindease.com">support@mindease.com</a></p>
+        <p>Phone: +254 765489023</p>
+      </div>
+      <div class="footer-column">
+        <h4>About Us</h4>
+        <p>
+          MindEase is a mental wellness platform providing tools<br>
+          to help people improve emotional wellbeing. We aim to<br>
+          support individuals facing daily struggles or mental disorders.
+        </p>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2025 MindEase. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('stressQuiz').addEventListener('submit', function(event) {
+      event.preventDefault();
+      let total = 0;
+      for (let i = 1; i <= 5; i++) {
+        const answer = document.querySelector(`input[name="q${i}"]:checked`);
+        if (answer) total += parseInt(answer.value);
+      }
+
+      const result = document.getElementById('result');
+      if (total <= 7) {
+        result.textContent = "You seem to have a good handle on stress. Keep up the healthy habits!";
+      } else if (total <= 11) {
+        result.textContent = "You may be experiencing moderate stress. Consider regular relaxation exercises and better work-life balance.";
+      } else {
+        result.textContent = "You appear to be under high stress. Talking to a mental health professional might be beneficial.";
+      }
+    });
+  </script>
+</body>
+</html>

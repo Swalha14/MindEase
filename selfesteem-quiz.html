@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Self-Esteem Quiz - MindEase</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="quiz.css" />
+</head>
+<body>
+  <header>
+    <a href="index.html" style="text-decoration: none; color: inherit;">
+      <h1>MindEase</h1>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="support-groups.html">Support Groups</a>
+      <a href="mood-quiz.html">Quiz</a>
+      <a href="breathing.html">Breathing Exercise</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>🌸 Self-Esteem Quiz</h2>
+    <p>This quiz helps you reflect on your confidence, self-image, and overall self-worth.</p>
+
+    <form id="esteemQuiz">
+      <div class="quiz-question">
+        <p>1. How do you usually feel about yourself?</p>
+        <label><input type="radio" name="q1" value="1"> I feel positive and capable</label>
+        <label><input type="radio" name="q1" value="2"> It varies depending on the day</label>
+        <label><input type="radio" name="q1" value="3"> I often feel inadequate or self-critical</label>
+      </div>
+
+      <div class="quiz-question">
+        <p>2. How comfortable are you receiving compliments?</p>
+        <label><input type="radio" name="q2" value="1"> Very comfortable</label>
+        <label><input type="radio" name="q2" value="2"> Somewhat uncomfortable</label>
+        <label><input type="radio" name="q2" value="3"> Very uncomfortable</label>
+      </div>
+
+      <div class="quiz-question">
+        <p>3. How often do you compare yourself to others?</p>
+        <label><input type="radio" name="q3" value="3"> Frequently</label>
+        <label><input type="radio" name="q3" value="2"> Occasionally</label>
+        <label><input type="radio" name="q3" value="1"> Rarely</label>
+      </div>
+
+      <div class="quiz-question">
+        <p>4. Do you stand up for yourself when treated unfairly?</p>
+        <label><input type="radio" name="q4" value="1"> Yes, most of the time</label>
+        <label><input type="radio" name="q4" value="2"> Sometimes</label>
+        <label><input type="radio" name="q4" value="3"> Rarely or never</label>
+      </div>
+
+      <div class="quiz-question">
+        <p>5. When you make a mistake, how do you respond?</p>
+        <label><input type="radio" name="q5" value="1"> I forgive myself and learn</label>
+        <label><input type="radio" name="q5" value="2"> I feel bad for a while</label>
+        <label><input type="radio" name="q5" value="3"> I dwell on it or criticize myself</label>
+      </div>
+
+      <button type="submit" class="quiz-link">Submit</button>
+    </form>
+
+    <div id="result" style="margin-top: 2rem; font-weight: bold;"></div>
+
+    <div class="disclaimer" style="margin-top: 3rem; padding: 1rem; background-color: #e6f2f9; border: 1px solid #b3d9f5; border-radius: 8px;">
+      <p style="margin: 0; font-size: 0.95rem; color: #0f3f63;">
+        <strong>Note:</strong> This quiz is not a clinical diagnosis. It’s intended to help you reflect and understand more about your emotional state.
+        If you’re feeling persistently unwell, please talk to a qualified therapist.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h4>Contact Us</h4>
+        <p>Email: <a href="mailto:support@mindease.com">support@mindease.com</a></p>
+        <p>Phone: +254 765489023</p>
+      </div>
+      <div class="footer-column">
+        <h4>About Us</h4>
+        <p>
+          MindEase is a mental wellness platform providing tools<br>
+          to help people improve emotional wellbeing. We aim to<br>
+          support individuals facing daily struggles or mental disorders.
+        </p>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2025 MindEase. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('esteemQuiz').addEventListener('submit', function(event) {
+      event.preventDefault();
+      let total = 0;
+      for (let i = 1; i <= 5; i++) {
+        const answer = document.querySelector(`input[name="q${i}"]:checked`);
+        if (answer) total += parseInt(answer.value);
+      }
+
+      const result = document.getElementById('result');
+      if (total <= 7) {
+        result.textContent = "You appear to have healthy self-esteem. Stay confident and keep nurturing your self-worth!";
+      } else if (total <= 11) {
+        result.textContent = "You may experience occasional self-doubt. Building more self-acceptance and positive self-talk could help.";
+      } else {
+        result.textContent = "Your responses suggest low self-esteem. It might be helpful to speak with a therapist or counselor.";
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,133 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mood Quiz - MindEase</title>
-    <link rel="stylesheet" href="mood-quiz.css" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-   <header> 
- <a href="index.html" style="text-decoration: none; color: inherit;">
-  <h1>MindEase</h1>
-</a>
- <nav class="main-nav">
-   
- <a href="index.html">Home</a>
- <a href="articles.html">Articles</a> 
- <a href="support-groups.html">Support Groups</a> 
- <a href="mood-quiz.html">Quiz</a>
- <a href="breathing.html">Breathing Exercise</a> 
- <a href="login.html" >Login</a> 
-</nav> 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mood Quizzes - MindEase</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="mood-quiz.css" />
+</head>
+<body>
+  <header>
+    <a href="index.html" style="text-decoration: none; color: inherit;">
+      <h1>MindEase</h1>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="support-groups.html">Support Groups</a>
+      <a href="mood-quiz.html">Quiz</a>
+      <a href="breathing.html">Breathing Exercise</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
 
- </header> 
+  <main class="quiz-landing container">
+    <h2>Check In With Yourself</h2>
+    <p>
+      Mental health matters—and being aware of how you're doing emotionally is a key part of taking care of yourself.
+      Our quizzes are designed to help you reflect on your current mood, thought patterns, sleep, stress levels, and self-esteem.
+      Each quiz takes only a few minutes and can help guide your next steps.
+    </p>
 
-    <main>
-      <section class="quiz-section">
-        <h2>Mood Quiz</h2>
-        <form id="moodForm">
-          <label>1. How have you been feeling today?</label>
-          <select name="q1">
-            <option value="happy">Happy</option>
-            <option value="sad">Sad</option>
-            <option value="anxious">Anxious</option>
-            <option value="angry">Angry</option>
-            <option value="calm">Calm</option>
-          </select>
-
-          <label>2. How well did you sleep last night?</label>
-          <select name="q2">
-            <option value="great">Great</option>
-            <option value="okay">Okay</option>
-            <option value="poor">Poor</option>
-          </select>
-
-          <label>3. Have you been able to focus on tasks?</label>
-          <select name="q3">
-            <option value="focused">Very Focused</option>
-            <option value="somewhat">Somewhat</option>
-            <option value="notatall">Not at all</option>
-          </select>
-
-          <label>4. How is your energy level?</label>
-          <select name="q4">
-            <option value="high">High</option>
-            <option value="moderate">Moderate</option>
-            <option value="low">Low</option>
-          </select>
-
-          <label>5. How often have you felt overwhelmed recently?</label>
-          <select name="q5">
-            <option value="never">Never</option>
-            <option value="sometimes">Sometimes</option>
-            <option value="often">Often</option>
-          </select>
-
-          <button type="submit" class="btn">Submit</button>
-        </form>
-
-        <div id="result" class="result"></div>
-      </section>
-    </main>
-
-    <section class="quote-highlight">
-      <blockquote>
-        "Taking care of your mind is just as important as taking care of your
-        body."
-      </blockquote>
-    </section>
-
-    <footer>
-      <div class="footer-columns">
-        <div class="footer-column">
-          <h4>Contact Us</h4>
-          <p>
-            Email:
-            <a href="mailto:support@mindease.com">support@mindease.com</a>
-          </p>
-          <p>Phone: +254 765489023</p>
-        </div>
-        <div class="footer-column">
-          <h4>About Us</h4>
-          <p>
-            MindEase is a mental wellness platform providing tools<br />
-            to help people improve emotional wellbeing. We aim to<br />
-            provide help for people going through daily struggles<br />
-            or even those that may have mental disorders.
-          </p>
-        </div>
+    <div class="quiz-cards">
+      <div class="quiz-card">
+        <h3>🧠 General Mental Health Quiz</h3>
+        <p>Get a snapshot of your overall emotional wellbeing.</p>
+        <a href="general-quiz.html" class="quiz-link">Take Quiz</a>
       </div>
-      <p class="copyright">&copy; 2025 MindEase. All rights reserved.</p>
-    </footer>
+      <div class="quiz-card">
+        <h3>😟 Anxiety Quiz</h3>
+        <p>See if you're experiencing symptoms of anxiety.</p>
+        <a href="anxiety-quiz.html" class="quiz-link">Take Quiz</a>
+      </div>
+      <div class="quiz-card">
+        <h3>😔 Depression Quiz</h3>
+        <p>Evaluate common signs of depression.</p>
+        <a href="depression-quiz.html" class="quiz-link">Take Quiz</a>
+      </div>
+      <div class="quiz-card">
+        <h3>🌀 Stress Quiz</h3>
+        <p>Understand your current stress levels and triggers.</p>
+        <a href="stress-quiz.html" class="quiz-link">Take Quiz</a>
+      </div>
+      <div class="quiz-card">
+        <h3>🌙 Sleep Wellness Quiz</h3>
+        <p>Check if your sleep patterns could be impacting your mood.</p>
+        <a href="sleep-quiz.html" class="quiz-link">Take Quiz</a>
+      </div>
+      <div class="quiz-card">
+        <h3>🌸 Self-Esteem Quiz</h3>
+        <p>Assess your self-image and confidence levels.</p>
+        <a href="selfesteem-quiz.html" class="quiz-link">Take Quiz</a>
+      </div>
+    </div>
 
-    <script>
-      document
-        .getElementById("moodForm")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-          const q1 = document.forms["moodForm"]["q1"].value;
-          const q2 = document.forms["moodForm"]["q2"].value;
-          const q3 = document.forms["moodForm"]["q3"].value;
-          const q4 = document.forms["moodForm"]["q4"].value;
-          const q5 = document.forms["moodForm"]["q5"].value;
+    <div class="disclaimer" style="margin-top: 3rem; padding: 1.5rem; background-color: #e6f2f9; border: 1px solid #b3d9f5; border-radius: 8px;">
+  <p style="margin: 0; font-size: 0.95rem; color: #0f3f63;">
+    <strong>Disclaimer:</strong> The quizzes provided on MindEase are for informational and self-reflection purposes only.
+    They are not intended to replace a clinical diagnosis or professional medical advice. If you're concerned about your mental health,
+    we recommend speaking with a qualified therapist or mental health professional for a proper evaluation and support.
+  </p>
+</div>
 
-          let message = "Thanks for checking in. ";
+  </main>
 
-          if (q1 === "sad" || q1 === "anxious" || q5 === "often") {
-            message +=
-              "It seems like you're facing some challenges today. Remember it's okay to feel that way—consider checking out our Articles or Support Groups.";
-          } else if (q1 === "happy" && q2 === "great") {
-            message +=
-              "You're in a great place today! Keep nurturing your well-being.";
-          } else {
-            message +=
-              "Keep taking care of yourself, and don't hesitate to use our resources if needed.";
-          }
-
-          document.getElementById("result").textContent = message;
-        });
-    </script>
-  </body>
+  <footer>
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h4>Contact Us</h4>
+        <p>Email: <a href="mailto:support@mindease.com">support@mindease.com</a></p>
+        <p>Phone: +254 765489023</p>
+      </div>
+      <div class="footer-column">
+        <h4>About Us</h4>
+        <p>
+          MindEase is a mental wellness platform providing tools<br>
+          to help people improve emotional wellbeing. We aim to<br>
+          support individuals facing daily struggles or mental disorders.
+        </p>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2025 MindEase. All rights reserved.</p>
+  </footer>
+</body>
 </html>
