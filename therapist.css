@@ -58,3 +58,15 @@ body {
     max-width: none;
   }
 }
+.rating {
+  color: #f4c150;
+  font-size: 1.2rem;
+  margin: 0.3rem 0;
+}
+
+.location {
+  font-style: italic;
+  color: #4a7c59;
+  margin-bottom: 0.5rem;
+}
+
