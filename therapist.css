@@ -22,13 +22,13 @@ body {
   gap: 1.5rem;
   align-items: center;
 }
-
 .therapist-card img {
-  flex: 1 1 150px;
-  max-width: 150px;
+  width: 200px;              
+  height: 100%;              
   border-radius: 8px;
-  object-fit: cover;
+  object-fit: cover;         /
 }
+
 
 .therapist-info {
   flex: 2 1 300px;
